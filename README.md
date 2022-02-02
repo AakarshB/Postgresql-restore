@@ -1,3 +1,6 @@
+![Postgresql-backup-restore-architecture](https://user-images.githubusercontent.com/85996087/152223067-bf76710e-18cc-4e4e-8345-bc272c6bed62.jpg)
+
+
 ## Goal
 
 Easily Restore your PostgreSQL Database from the tar file created using the backup job
