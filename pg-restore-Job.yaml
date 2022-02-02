@@ -1,0 +1,39 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: postgres-restore
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: pgsql-backup
+        image: aakarsh94/postgresql-restore:v1.0
+        env:
+        - name: fileShareName
+          value: "backup2"
+        - name: tarfilename
+          value: ""          
+        - name: PGDESTHOST
+          value: "cron-dest.postgres.database.azure.com"
+        - name: PGDESTPORT
+          value: "5432"
+        - name: PGDATABASE
+          value: "adventureworks"
+        - name: PGDESTUSER
+          value: "Azureadmin@cron-dest"
+        - name: PGDESTPASSWORD
+          value: "P3CGULlUzA"
+        volumeMounts:
+        - name: azurefileshare
+          mountPath: /backup2
+        securityContext:
+          capabilities:
+            add: ["SYS_ADMIN", "DAC_READ_SEARCH"]                   
+      volumes:
+      - name: azurefileshare
+        azureFile:
+          secretName: storage-secret
+          shareName: backup2
+          readOnly: false          
+                     
