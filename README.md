@@ -1,18 +1,5 @@
 ![Postgresql-backup-restore-architecture](https://user-images.githubusercontent.com/85996087/152223067-bf76710e-18cc-4e4e-8345-bc272c6bed62.jpg)
 
-PG-Restore Pre-requisites	
-Requirements	Variables names
-Storage Account name	azurestorageaccountname
-Storage Account key	azurestorageaccountkey
-File Share name	fileShareName
-Back up file name	tarfilename
-Postgresql db destination host name	PGDESTHOST
-Postgresql db destination Port number	PGDESTPORT
-Postgresql db destination database name	PGDATABASE
-Postgresql db destination username name	PGDESTUSER
-Postgresql db destination password	PGDESTPASSWORD
-![image](https://user-images.githubusercontent.com/85996087/152306934-b556bd9f-9294-4d84-8b41-684c4a335b0e.png)
-
 ## Goal
 
 Easily Restore your PostgreSQL Database from the tar file created using the backup job
