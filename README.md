@@ -23,17 +23,19 @@ Replace database creds in [pg-restore-Job.yaml]
 
 Update the secret.yaml and job.yaml with the DB and storage connectionstrings
 
-## Running manually on your computer
+## Running on your Destination Cluster
 
-### Step 1. Replace the image name with the lastest image provided, below is the defualt provided in the cronjob yaml
+### Step 1. Replace the image name with the version specific to your PostgreSQL server.
 
-aakarsh94/postgresql-restore:v1.0 `
+Below is an example of the image name which is specific to PostgreSQL version 11
 
-### Step 2. Run and map to your drive (e.g. /d/backup)
+aakarsh94/postgresql-restore:v11 `
 
- Apply the job and secrets.yaml in your kubernetes cluster
+### Step 2. Run and map to your backup drive 
 
- NOTE: The target database is to be created in the destination server before the restore job is applied Below is the command to create a database in postgresql or pgadmin tool can be used.
+Apply the job and secrets.yaml in your kubernetes cluster
+
+NOTE: The target database is to be created in the destination server before the restore job is applied Below is the command to create a database in postgresql or pgadmin tool can be used.
 
 CREATE DATABASE adventureworks
     WITH 
