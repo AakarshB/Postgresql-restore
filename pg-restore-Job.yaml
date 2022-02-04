@@ -8,7 +8,7 @@ spec:
       restartPolicy: OnFailure
       containers:
       - name: pgsql-backup
-        image: aakarsh94/postgresql-restore:v1.0
+        image: aakarsh94/postgresql-restore:v11
         env:
         - name: fileShareName
           value: "backup2"
